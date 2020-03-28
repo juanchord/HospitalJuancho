@@ -34,10 +34,14 @@
         <td>
             @Html.DisplayFor(modelItem => item.Asegurado)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_Paciente }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_Paciente }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_Paciente })
+        <td class="btn btn-primary myBtn">
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID_Paciente })
+        </td>
+        <td class="btn btn-danger myBtn">
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID_Paciente })
+        </td>
+        <td class="btn btn-success myBtn">
+            @Html.ActionLink("Details", "Details", new { id = item.ID_Paciente })
         </td>
     </tr>
 }

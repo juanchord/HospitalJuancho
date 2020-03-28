@@ -49,3 +49,11 @@ a:hover{
     bottom:10px;
 
 }
+
+.myBtn{
+    margin:10px 10px;
+    color:#fff !important;
+}
+.myBtn:hover{
+    color:#fff !important;
+}

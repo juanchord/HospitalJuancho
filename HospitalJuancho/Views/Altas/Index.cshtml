@@ -52,10 +52,14 @@
         <td>
             @Html.DisplayFor(modelItem => item.Monto)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_ALtas }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_ALtas }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_ALtas })
+        <td class="btn btn-primary myBtn">
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID_ALtas})
+        </td>
+        <td class="btn btn-danger myBtn">
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID_ALtas })
+        </td>
+        <td class="btn btn-success myBtn">
+            @Html.ActionLink("Details", "Details", new { id = item.ID_ALtas })
         </td>
     </tr>
 }

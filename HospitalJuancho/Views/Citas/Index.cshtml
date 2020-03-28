@@ -40,10 +40,14 @@
         <td>
             @Html.DisplayFor(modelItem => item.Hora_Cita)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MyProperty }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MyProperty }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MyProperty })
+        <td class="btn btn-primary myBtn">
+            @Html.ActionLink("Edit", "Edit", new { id = item.MyProperty })
+        </td>
+        <td class="btn btn-danger myBtn">
+            @Html.ActionLink("Delete", "Delete", new { id = item.MyProperty })
+        </td>
+        <td class="btn btn-success myBtn">
+            @Html.ActionLink("Details", "Details", new { id = item.MyProperty })
         </td>
     </tr>
 }
