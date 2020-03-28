@@ -9,7 +9,7 @@ namespace HospitalJuancho.Models
     public class BDContext:DbContext
     {
         public BDContext()
-            :base("HospitalJuancho")
+            :base("HospitalJuanchos")
         { }
 
         public DbSet<Medicos> Medicos { get; set; }

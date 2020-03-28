@@ -49,7 +49,7 @@ namespace HospitalJuancho.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MyProperty,ID_Paciente,Fecha_Cita,Hora_Cita,ID_Medico")] Citas citas)
+        public ActionResult Create([Bind(Include = "ID_Cita,ID_Paciente,Fecha_Cita,Hora_Cita,ID_Medico")] Citas citas)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace HospitalJuancho.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MyProperty,ID_Paciente,Fecha_Cita,Hora_Cita,ID_Medico")] Citas citas)
+        public ActionResult Edit([Bind(Include = "ID_Cita,ID_Paciente,Fecha_Cita,Hora_Cita,ID_Medico")] Citas citas)
         {
             if (ModelState.IsValid)
             {

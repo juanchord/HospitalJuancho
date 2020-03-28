@@ -12,7 +12,7 @@ namespace HospitalJuancho.Models
     public class Citas
     {
         [Key]
-        public int MyProperty { get; set; }
+        public int ID_Cita { get; set; }
         [Required]
         public int ID_Paciente { get; set; }
         [ForeignKey("ID_Paciente")]
