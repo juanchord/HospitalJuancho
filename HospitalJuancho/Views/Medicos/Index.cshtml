@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<HospitalJuancho.Models.Medicos>
 
+
+
 @{
     ViewBag.Title = "Index";
 }
@@ -9,6 +11,25 @@
 <p>
     @Html.ActionLink("Crear Nuevo", "Create")
 </p>
+
+    @using (Html.BeginForm("Index", "Medicos", FormMethod.Post))
+    {
+<div class="between">
+    @Html.TextBox("busqueda", "", new { @class = "form-control mb-2", placeholder = "Buscar..." })
+    <br />
+    <select name="select" class="form-control col col-lg-2">
+        <option value="">Elige una opcion</option>
+        <option value="Nombre">Nombre</option>
+        <option value="Especialidad">Especialidad</option>
+    </select>
+
+    <div class="col-2">
+        <button type="submit" class="btn btn-success">Buscar</button>
+    </div>
+</div>
+    }
+<br />
+<br />
 <table class="table">
     <tr>
         <th>
@@ -23,28 +44,29 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Exequatur)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Especialidad)
-        </td>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Exequatur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Especialidad)
+            </td>
 
-        <td class="btn btn-primary myBtn">
-            @Html.ActionLink("Editar", "Edit", new { id=item.ID_Medico })  
-        </td>
-        <td class="btn btn-danger myBtn">
-            @Html.ActionLink("Eliminar", "Delete", new { id = item.ID_Medico })
-        </td>
-        <td class="btn btn-success myBtn">
-            @Html.ActionLink("Detalles", "Details", new { id = item.ID_Medico })
-        </td>
-    </tr>
-}
+            <td class="btn btn-primary myBtn">
+                @Html.ActionLink("Editar", "Edit", new { id = item.ID_Medico })
+            </td>
+            <td class="btn btn-danger myBtn">
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.ID_Medico })
+            </td>
+            <td class="btn btn-success myBtn">
+                @Html.ActionLink("Detalles", "Details", new { id = item.ID_Medico })
+            </td>
+        </tr>
+    }
 
 </table>

@@ -19,6 +19,29 @@ namespace HospitalJuancho.Controllers
         {
             return View(db.Medicos.ToList());
         }
+        [HttpPost]
+        public ActionResult Index(string busqueda,string select)
+        {
+
+            if(select == "Nombre")
+            {
+                var abc = from a in db.Medicos
+                          select a;
+                abc = abc.Where(s => s.Nombre.Contains(busqueda));
+                return View(abc);
+            }
+            if(select == "Especialidad")
+            {
+                var abc = from a in db.Medicos
+                          where a.Especialidad == busqueda
+                          select a;
+                return View(abc);
+              
+            }
+            return View(db.Medicos.ToList());
+           
+        }
+
 
         // GET: Medicos/Details/5
         public ActionResult Details(int? id)
@@ -123,5 +146,7 @@ namespace HospitalJuancho.Controllers
             }
             base.Dispose(disposing);
         }
+      
+        }
     }
-}
+

@@ -21,5 +21,12 @@ namespace HospitalJuancho.Models
         [Required]
         public string Especialidad { get; set; }
 
+        public Opcion opci { get; set; }
+
+
+        public enum Opcion
+        {
+            Especialidad, Medico
+        }
     }
 }

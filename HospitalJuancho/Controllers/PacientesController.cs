@@ -19,6 +19,42 @@ namespace HospitalJuancho.Controllers
         {
             return View(db.Pacientes.ToList());
         }
+        [HttpPost]
+        public ActionResult Index(string busqueda, string select, string activo)
+        {
+            if (select == "Nombre")
+            {
+                var abc = from a in db.Pacientes
+                          select a;
+                abc = abc.Where(b => b.Nombre.Contains(busqueda));
+                return View(abc);
+            }
+            if (select == "Especialidad")
+            {
+                var abc = from a in db.Pacientes
+                          where a.Cedula== busqueda
+                          select a;
+                return View(abc);
+
+            }
+            if (activo == "Asegurado")
+            {
+                var abc = from a in db.Pacientes
+                          where a.Asegurado.Equals(true)
+                          select a;
+                return View(abc);
+            }
+            if (activo == "No Asegurado")
+            {
+                var abc = from a in db.Pacientes
+                          where a.Asegurado.Equals(false)
+                          select a;
+                return View(abc);
+            }
+
+
+            return View(db.Medicos.ToList());
+        }
 
         // GET: Pacientes/Details/5
         public ActionResult Details(int? id)

@@ -57,3 +57,7 @@ a:hover{
 .myBtn:hover{
     color:#fff !important;
 }
+.between{
+    display:flex;
+  
+}
