@@ -19,6 +19,24 @@ namespace HospitalJuancho.Controllers
         {
             return View(db.Habitaciones.ToList());
         }
+        [HttpPost]
+        public ActionResult Index(string busqueda, string select)
+        {
+            if (busqueda == string.Empty)
+            {
+                return View(db.Habitaciones.ToList());
+
+
+            }
+            else
+            {
+                var abc = from a in db.Habitaciones
+                          where a.Tipo == busqueda
+                          select a;
+                return View(abc);
+            }
+
+        }
 
         // GET: Habitaciones/Details/5
         public ActionResult Details(int? id)
